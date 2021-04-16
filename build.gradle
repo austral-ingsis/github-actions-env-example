@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task printUsernameTokenEnvVars {
+    doLast {
+        print("DON'T DO THIS IN ANY ENVIRONMENT!. THIS IS JUST FOR DEMONSTRATION!\n")
+        print("------------------------------------------------------------------\n")
+        print("Username: ${System.getenv("USERNAME")}\n")
+        print("Token: ${System.getenv("TOKEN")}")
+    }
+}
