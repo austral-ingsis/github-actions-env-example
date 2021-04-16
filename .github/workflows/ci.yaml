@@ -17,3 +17,6 @@ jobs:
         run: chmod +x gradlew
       - name: Run print task
         run: ./gradlew printUsernameTokenEnvVars
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          TOKEN: ${{ secrets.TOKEN }}
